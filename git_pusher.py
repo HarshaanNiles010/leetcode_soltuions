@@ -5,9 +5,9 @@ from random import randrange
 import file_maker
 
 def generate_date():
-    start = datetime.date(2023,1,1)
+    start = datetime.date(2022,1,1)
     # initializing K 
-    k = 245
+    k = 365
     res = []
     for day in range(k):
         date = (start + datetime.timedelta(days = day)).isoformat()
