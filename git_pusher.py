@@ -5,7 +5,7 @@ from random import randrange
 import file_maker
 
 def generate_date():
-    start = datetime.date(2024,2,2)
+    start = datetime.date(2023,1,1)
     # initializing K 
     k = 365
     res = []
