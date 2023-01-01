@@ -7,7 +7,7 @@ import file_maker
 def generate_date():
     start = datetime.date(2023,1,1)
     # initializing K 
-    k = 365
+    k = 245
     res = []
     for day in range(k):
         date = (start + datetime.timedelta(days = day)).isoformat()
