@@ -28,6 +28,6 @@ def isValidPara(s:str) -> bool:
         stack.pop()
     return not stack
 
-if __name__ == '__mian__':
+if __name__ == '__main__':
     s = "(]"
     print(isValidPara(s))
