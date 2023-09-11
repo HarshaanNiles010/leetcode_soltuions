@@ -10,7 +10,7 @@ def lcsLength(text1: str, text2: str) -> int:
                 L[i][j] = L[i - 1][j - 1] + 1
             else:
                 L[i][j] = max(L[i - 1][j], L[i][j - 1])
-    length = L[text1][text2]
+    length = L[len(text1)][len(text2)]
     return length
 
 if __name__ == '__main__':
