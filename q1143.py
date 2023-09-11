@@ -6,11 +6,12 @@ def lcsLength(text1: str, text2: str) -> int:
             for j in range(len(text2) + 1 ):
                 if i == 0 or j == 0:
                     L[i][j] = 0
-                elif self.numsListA[i - 1] == self.numsListB[j - 1]:
+                elif text1[i - 1] == text2[j - 1]:
                     L[i][j] = L[i - 1][j - 1] + 1
                 else:
                     L[i][j] = max(L[i - 1][j], L[i][j - 1])
-        self.lcsLength = L[self.lengthListA][self.lengthListB]
+        length = L[text1][text2]
+        return length
 
 if __name__ == '__main__':
     
