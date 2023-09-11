@@ -1,9 +1,9 @@
 from typing import List
 
 def lcsLength(text1: str, text2: str) -> int:
-    L = [[None]*(self.lengthListB + 1) for i in range(self.lengthListA + 1)] 
-        for i in range(self.lengthListA + 1 ):
-            for j in range(self.lengthListB + 1 ):
+    L = [[None]*(len(text2) + 1) for i in range(len(text1) + 1)] 
+        for i in range(len(text1) + 1 ):
+            for j in range(len(text2) + 1 ):
                 if i == 0 or j == 0:
                     L[i][j] = 0
                 elif self.numsListA[i - 1] == self.numsListB[j - 1]:
