@@ -1,5 +1,6 @@
 from typing import List
-
+# okay this is not the most refined method to solve this problem but I didn't know any better at the moment
+# so cut me some slack but yes a more upgraded method shall be updated as soon as I make it but mostly it shortens creation of the frequency table
 def freqSort(s:str)->str:
     e = list(set(s))
     c = [0] * len(e)
