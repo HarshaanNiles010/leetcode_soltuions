@@ -1,5 +1,5 @@
 from typing import List
-
+# this is an example of the sliding window where you move the window to the point when you can sell the product
 def max_profit(prices:List[int]) -> int:
     res = 0
     lowest = prices[0]
