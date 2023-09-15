@@ -7,3 +7,4 @@ def isPalindrome(s:str) -> bool:
 if __name__ == '__main__':
     s = "ab_a"
     print(isPalindrome(s))
+# Random Bull shit go
