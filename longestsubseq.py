@@ -14,3 +14,5 @@ def lengthLCS(s:str) -> int:
 if __name__ == '__main__':
     s = "abcabcbb"
     print(lengthLCS(s))
+
+# Random Bullshit go
