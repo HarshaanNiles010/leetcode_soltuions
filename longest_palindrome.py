@@ -1,4 +1,5 @@
 
+# the solution provided here is O(n*2) so I don't know if there is something better but hey I am not complaing 
 def LPS(s:str) -> str:
     t,ans="",""
     size=0
