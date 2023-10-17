@@ -1,15 +1,6 @@
 from typing import List
 
 
-def valid_gen(s:str, n: int) -> bool:
-    net_sum = 0
-    for i in s:
-        net_sum += ord(i)
-    n = n * (ord("(") + ord(")"))
-    if n == net_sum:
-        return True
-    return False
-
 def generate(n:int) -> List[str]:
     
     stack = []
