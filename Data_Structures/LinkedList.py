@@ -109,7 +109,26 @@ class Linked_List:
                 return current_position
             current_node = current_node.next_node
             current_position += 1
-        
+    
+    def update_at_position(self, val, position):
+        if self.head == None:
+            raise Exception("No Linked list to make changes in")
+        if position < 0:
+            raise Exception("Position less than the list")
+        if position > self.linked_list_length():
+            raise Exception("Position beyond the length of the list")
+        current_position = 0
+        current_node = self.head
+        if current_position == position:
+            current_node.val = val
+        while (current_node != None and current_position != position):
+            current_position += 1
+            current_node = current_node.next_node
+            if current_node != None:
+                current_node.val = val
+            else:
+                raise Exception("Index not found")
+
 if __name__ == '__main__':
     l1 = Linked_List()
     arr = [(i) for i in range(10)]
@@ -124,4 +143,7 @@ if __name__ == '__main__':
     l1.remove_at_head()
     l1.print_linked_list()
     print(l1.search_linked_list(45))
+    l1.print_linked_list()
+    l1.update_at_position(23,1)
+    l1.print_linked_list()
     
