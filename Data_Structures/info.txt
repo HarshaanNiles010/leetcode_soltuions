@@ -1,0 +1,3 @@
+This folder here contains the data structures mostly used,
+They will be stored as classes and can be accessed later on. 
+Moreover, they are not optimized.
