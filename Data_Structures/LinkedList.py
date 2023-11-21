@@ -99,6 +99,16 @@ class Linked_List:
             else:
                 raise Exception("Index is not present")
         
+    def search_linked_list(self, target):
+        if self.head == None:
+            return -1
+        current_node = self.head
+        current_position = 0
+        while current_node:
+            if current_node.val == target:
+                return current_position
+            current_node = current_node.next_node
+            current_position += 1
         
 if __name__ == '__main__':
     l1 = Linked_List()
@@ -113,4 +123,5 @@ if __name__ == '__main__':
     l1.print_linked_list()
     l1.remove_at_head()
     l1.print_linked_list()
+    print(l1.search_linked_list(45))
     
