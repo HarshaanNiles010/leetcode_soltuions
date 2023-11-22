@@ -128,7 +128,16 @@ class Linked_List:
                 current_node.val = val
             else:
                 raise Exception("Index not found")
-
+    
+    def reverse_list(self):
+        prev, curr = None, self.head
+        while curr:
+            temp = curr.next_node
+            curr.next_node = prev
+            prev = curr
+            curr = temp
+        self.head = prev
+    
 if __name__ == '__main__':
     l1 = Linked_List()
     arr = [(i) for i in range(10)]
@@ -145,5 +154,7 @@ if __name__ == '__main__':
     print(l1.search_linked_list(45))
     l1.print_linked_list()
     l1.update_at_position(23,1)
+    l1.print_linked_list()
+    l1.reverse_list()
     l1.print_linked_list()
     
