@@ -53,7 +53,7 @@ class Doubly_Linked_list:
             self.tail = temp_node
     
     
-    def insert_at_position(self, val, position):
+"""     def insert_at_position(self, val, position):
         if position < 0:
             raise Exception("Invalid position less than the length of the list")
         if position > self.linked_list_length():
@@ -82,7 +82,7 @@ class Doubly_Linked_list:
                     if current_node.next_ptr is not None:
                         current_node.next_ptr.prev_ptr = temp_node
                 else:
-                    raise Exception("Index not available")
+                    raise Exception("Index not available") """
                 
 
 if __name__ == '__main__':
