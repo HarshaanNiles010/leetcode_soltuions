@@ -1,3 +1,4 @@
+import math
 from typing import List
 def minSpeed(plates:List[int], h: int) -> int:
     l, r = 1, max(plates)
