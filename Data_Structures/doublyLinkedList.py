@@ -277,3 +277,5 @@ if __name__ == '__main__':
     for a in arr:
         d1.insertAtBeginning(a)
     d1.printLinkedList()
+
+# This implementation was taken and learned from https://www.pythonforbeginners.com/basics/doubly-linked-list-in-python
