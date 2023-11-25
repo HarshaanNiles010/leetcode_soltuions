@@ -176,7 +176,7 @@ class DoublyLinkedList:
     def printLinkedList(self):
         temp = self.head
         while temp is not None:
-            print(temp.data, sep=",")
+            print(temp.data, sep=",", end = "<=>")
             temp = temp.next
 
     def updateElement(self, old_value, new_value):
@@ -262,7 +262,7 @@ class DoublyLinkedList:
                     break
                 temp = temp.next
             if temp is None:
-                print("There are less than {position} elements in linked list. Cannot delete element.".format(position))
+                print(f"There are less than {position} elements in linked list. Cannot delete element.")
             elif temp.next is None:
                 self.deleteFromLast()
                 temp.previous.next = temp.next
