@@ -10,6 +10,8 @@ from typing import List
         newStack.append((j,i))
     return res
 """
+# This algorithm has a small problem this one doesn't account for when the temperature increases but then has an increasing sequence below
+# The peak
 def dailyTemp(temp:List[int]) -> List[int]:
     leftPtr = 0
     rightPtr = 0
