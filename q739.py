@@ -11,9 +11,23 @@ from typing import List
     return res
 """
 def dailyTemp(temp:List[int]) -> List[int]:
-    pass
+    leftPtr = 0
+    rightPtr = 0
+    res = []
+    while rightPtr < len(temp) and leftPtr < len(temp):
+        if temp[leftPtr] < temp[rightPtr]:
+            res.append(rightPtr - leftPtr)
+            leftPtr += 1
+            rightPtr = leftPtr
+        else:
+            rightPtr += 1
+    shortFall = [0] * (len(temp) - len(res))
+    res = res + shortFall
+    return res
 
 
 if __name__ == '__main__':
     temperatures = [73,74,75,71,69,72,76,73]
+    print(dailyTemp(temperatures))
+    temperatures = [30,40,50,60]
     print(dailyTemp(temperatures))
