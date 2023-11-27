@@ -1,6 +1,6 @@
 from typing import List 
 
-""" def dailyTemp(temp: List[int]) -> List[int]:
+def dailyTemp(temp: List[int]) -> List[int]:
     res = [0] * len(temp)
     newStack = []
     for i, j in enumerate(temp):
@@ -9,10 +9,10 @@ from typing import List
             res[index] = i - index
         newStack.append((j,i))
     return res
-"""
+
 # This algorithm has a small problem this one doesn't account for when the temperature increases but then has an increasing sequence below
 # The peak
-def dailyTemp(temp:List[int]) -> List[int]:
+""" def dailyTemp(temp:List[int]) -> List[int]:
     leftPtr = 0
     rightPtr = 0
     res = []
@@ -26,7 +26,7 @@ def dailyTemp(temp:List[int]) -> List[int]:
     shortFall = [0] * (len(temp) - len(res))
     res = res + shortFall
     return res
-
+"""
 
 if __name__ == '__main__':
     temperatures = [73,74,75,71,69,72,76,73]
