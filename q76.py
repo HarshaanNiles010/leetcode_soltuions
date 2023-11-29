@@ -1,16 +1,30 @@
+from collections import defaultdict
 def minWindow(s: str, t: str) -> str:
-    if len(t) > len(s):
-        return ""
-    t = list(t)
-    s = list(s)
-    stack = []
-    for i in range(len(s)):
-        if s[i] in t:
-            stack.append(i)
-        continue
-    len_t = len(t)
-    for i in range(len(stack)):
-        pass
+    if len(s) < len(t):
+            return ""
+    needstr = defaultdict(int)
+    for ch in t:
+        needstr[ch] += 1
+    needcnt = len(t)
+    res = (0, float('inf'))
+    start = 0
+    for end, ch in enumerate(s):
+        if needstr[ch] > 0:
+            needcnt -= 1
+        needstr[ch] -= 1
+        if needcnt == 0:
+            while True:
+                tmp = s[start]
+                if needstr[tmp] == 0:
+                    break
+                needstr[tmp] += 1
+                start += 1
+            if end - start < res[1] - res[0]:
+                res = (start, end)
+            needstr[s[start]] += 1
+            needcnt += 1
+            start += 1
+    return '' if res[1] > len(s) else s[res[0]:res[1]+1]
         
 if __name__ == '__main__':
     s = "ADOBECODEBANC"
