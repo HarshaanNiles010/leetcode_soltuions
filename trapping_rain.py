@@ -17,6 +17,7 @@ def total_rain_water(height:List[int]) -> int:
             l += 1
             # here just check if the height on the current pointer is greater than or less than the previous
             leftHieght = max(leftHieght,height[l])
+            # here we'll get the height of the left wall of the container. To find the area
             result += leftHieght - height[l]
         else:
             r -= 1
