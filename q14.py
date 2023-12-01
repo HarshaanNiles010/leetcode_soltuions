@@ -1,7 +1,10 @@
 from typing import List
 
 def longestPrefix(strs:[list[str]]) -> str:
-    pass
+    s = ""
+    l = len(min(strs, key = len))
+    strs.sort()
+    
 
 
 if __name__ == '__main__':
