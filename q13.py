@@ -5,8 +5,8 @@ def romanToInteger(s:str) -> int:
         if roman[s[i]] < roman[s[(i+1)]]:
             number-=roman[s[i]]
         else:
-                number+=roman[s[i]]
-        return number+roman[s[-1]]
+            number+=roman[s[i]]
+    return number+roman[s[-1]]
 
 
 if __name__ == '__main__':
