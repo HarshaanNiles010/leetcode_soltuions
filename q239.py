@@ -11,14 +11,19 @@ from typing import List
     return r """
 
 def maxSlidingWindow(nums:List[int], k:int) -> List[int]:
-    r = []
-    t = nums[:k]
-    r.append(max(t))
-    for i in range(k,len(nums)):
-        t.pop(0)
-        t.append(nums[i])
-        r.append(max(t))
-    return r
+    slow, fast = 0, 0
+        while True:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+            if slow == fast:
+                break
+
+        slow2 = 0
+        while True:
+            slow = nums[slow]
+            slow2 = nums[slow2]
+            if slow == slow2:
+                return slow
 
 
 if __name__ == '__main__':
