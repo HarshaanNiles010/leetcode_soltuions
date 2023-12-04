@@ -12,11 +12,11 @@ from typing import List
 
 def maxSlidingWindow(nums:List[int], k:int) -> List[int]:
     slow, fast = 0, 0
-        while True:
-            slow = nums[slow]
-            fast = nums[nums[fast]]
-            if slow == fast:
-                break
+    while True:
+        slow = nums[slow]
+        fast = nums[nums[fast]]
+        if slow == fast:
+            break
 
         slow2 = 0
         while True:
