@@ -18,12 +18,12 @@ def maxSlidingWindow(nums:List[int], k:int) -> List[int]:
         if slow == fast:
             break
 
-        slow2 = 0
-        while True:
-            slow = nums[slow]
-            slow2 = nums[slow2]
-            if slow == slow2:
-                return slow
+    slow2 = 0
+    while True:
+        slow = nums[slow]
+        slow2 = nums[slow2]
+        if slow == slow2:
+            return slow
 
 
 if __name__ == '__main__':
