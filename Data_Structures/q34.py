@@ -1,7 +1,7 @@
 from typing import List 
 
 def searchRange(nums: List[int], target: int) -> List[int]:
-    if not nums:
+    """ if not nums:
         return [-1,-1]
     if target not in nums:
         return [-1,-1]
@@ -16,8 +16,11 @@ def searchRange(nums: List[int], target: int) -> List[int]:
         else:
             res.append([first_left, first_right])
             break
-    return res
-
+    return res """
+    return [-1,-1] if target not in nums else [nums.index(target),len(nums)-nums[::-1].index(target)-1]
+    
+    
+    
 if __name__ == '__main__':
     nums = [5,7,7,8,8,10]
     target = 6
