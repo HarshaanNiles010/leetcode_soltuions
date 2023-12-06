@@ -20,12 +20,12 @@ class Tree:
     
     def print_tree(self):
         if self.left:
-            self.left.print_tree()
             print("<=",end="")
-        print(self.val)
+            self.left.print_tree()
+        print(self.val, end=" ")
         if self.right:
-            self.right.print_tree()
             print("=>",end="")
+            self.right.print_tree()
 
 
 if __name__ == '__main__':
