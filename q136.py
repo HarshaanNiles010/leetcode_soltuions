@@ -1,5 +1,5 @@
 from typing import List 
-
+# here just to find the number which doesn't have a duplicate in the list a simple for loop is used but also another approch might be a two pointer solution
 def findSingle(nums: List[int]) -> int:
     count = []
     for num in nums:
