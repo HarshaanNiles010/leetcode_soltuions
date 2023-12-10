@@ -1,4 +1,6 @@
 def intToRoman(n:int) -> str:
+    # This is a question where having a lookup table of all the possible combinations makes it easier to compute the solution.
+    # On the other hand there exsits a solution under which the current roman numeral is subtracted to find it's actual value or sth
     # Creating Dictionary for Lookup
     num_map = {
         1: "I",
