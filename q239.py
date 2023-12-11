@@ -9,7 +9,8 @@ from typing import List
         else:
             continue
     return r """
-
+# yeah this question asks what is the maximum value in a list  
+# and this solution below is not the correct solution
 def maxSlidingWindow(nums:List[int], k:int) -> List[int]:
     slow, fast = 0, 0
     while True:
