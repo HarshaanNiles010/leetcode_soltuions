@@ -1,5 +1,7 @@
 from typing import List
-
+# This is a backtracking question asking to generate all possible combinations with
+# a certain number of pairs of paranthesis provided
+# The basic concept keep the track of the open and close brackets throughout the algorithm
 
 def generate(n:int) -> List[str]:
     
