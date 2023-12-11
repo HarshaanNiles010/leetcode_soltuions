@@ -1,5 +1,6 @@
 from typing import List 
-
+# This problem can be summarized as replicate the original array and then paste it at the end. 
+# Yeah it takes constant time but that's all
 def arrConcat(nums: List[int]) -> List[int]:
     n = len(nums)
     res = [0] * (2* n)
