@@ -1,4 +1,5 @@
 from typing import List
+# yeah this question threw me off a bit but still we use the same idea of two pointers and try to put two pointers
 def threeClosest(nums: List[int], target: int) -> int:
     tempSum = 0
     nums.sort()
