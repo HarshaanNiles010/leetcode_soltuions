@@ -1,5 +1,5 @@
 from typing import List
-
+# In this question since we know the array is sorted we can use two pointers yet again
 def sortedTwoSum(nums:List[int], target:int) -> List[int]:
     lptr = 0
     rptr = len(nums) - 1
