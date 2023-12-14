@@ -1,5 +1,6 @@
 from typing import List
 # In this question since we know the array is sorted we can use two pointers yet again
+# place one pointer at the start of the list and the other at the end of the list, then keep moving the left pointer if the total is less than the target
 def sortedTwoSum(nums:List[int], target:int) -> List[int]:
     lptr = 0
     rptr = len(nums) - 1
