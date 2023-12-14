@@ -1,5 +1,5 @@
 from typing import List
-
+# In this problem I used a dictionary to count all the elements frequency
 def topK(nums:List[int], k:int) -> List[int]:
     rl = []
     e = list(set(nums))
