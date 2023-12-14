@@ -1,5 +1,6 @@
 from typing import List
 
+# this is a two pointer problem where I used the first pointer to chose an element and then another while loop to sort out the rest of elements in that set 
 def threeSum(nums:List[int]) -> List[List[int]]:
     res = []
     nums.sort()
