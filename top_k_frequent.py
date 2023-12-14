@@ -1,5 +1,6 @@
 from typing import List
 # In this problem I used a dictionary to count all the elements frequency
+# then simply sorted in reverse order using the sort function and then displayed the returned the total number of top k frequent elements
 def topK(nums:List[int], k:int) -> List[int]:
     rl = []
     e = list(set(nums))
