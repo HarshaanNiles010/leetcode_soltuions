@@ -1,5 +1,5 @@
 from typing import List
-
+# This question involves a simple move around
 def moveZero(nums:List[int]) -> List[int]:
     left = 0
     for i in range(len(nums)):
