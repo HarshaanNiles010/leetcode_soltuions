@@ -1,5 +1,5 @@
 from typing import List
-
+# a simple binary search 
 def binarySearch(nums: List[int], target: int) -> int:
     left = 0
     right = len(nums) - 1
