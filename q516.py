@@ -1,5 +1,5 @@
 from typing import List
-
+# this is one of the simplest dynamic programming problem which involves a simple memoziation table
 def lpsLength(s: str) -> int:
     L = [[None]*(len(s) + 1) for i in range(len(s) + 1)] 
     for i in range(len(s) + 1 ):
