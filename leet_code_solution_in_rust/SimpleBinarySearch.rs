@@ -8,7 +8,7 @@ fn main(){
     let position: usize = find_target(&mut arr, target);
     println!("The position is: {}", position);
 }
-
+// This is working fine 
 fn populate_arr(arr: &mut Vec<i32>, length: i32) -> Vec<i32>{
     arr.pop();
     for i in 0..length{
@@ -16,7 +16,7 @@ fn populate_arr(arr: &mut Vec<i32>, length: i32) -> Vec<i32>{
     }
     arr.to_vec()
 }
-
+// This is not working properly
 fn find_target(arr: &mut Vec<i32>, target: i32) -> usize{
     let mut left = 0;
     let mut right = arr.len() - 1;
