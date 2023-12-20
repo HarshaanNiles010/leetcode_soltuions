@@ -1,7 +1,7 @@
 use std::cmp::Ordering;
 
 #[allow(unused_variables)]
-
+#[warn(non_snake_case)]
 fn main(){
     let length: i32 = 10;
     let target: i32 = 5;
