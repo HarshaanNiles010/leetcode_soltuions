@@ -6,7 +6,7 @@ edition = "2021"
 
 [[bin]]
 name = "SimpleBinarySearch"
-path = "/Users/harshaanbabra/Desktop/Code/Python/leetcode_soltuions/leet_code_solution_in_rust/SimpleBinarySearch.rs"
+path = "/Users/harshaanbabra/Desktop/Code/Python/leetcode_soltuions/leet_code_solution_in_rust/simple_binary_search/SimpleBinarySearch.rs"
 
 
 [dependencies]
