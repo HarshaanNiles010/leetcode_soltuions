@@ -5,8 +5,8 @@ authors = ["Harshaan Babra <harshaan.babra@gmail.com>"]
 edition = "2021"
 
 [[bin]]
-name = "SimpleBinarySearch"
-path = "/Users/harshaanbabra/Desktop/Code/Python/leetcode_soltuions/leet_code_solution_in_rust/simple_bubble_sort/bubble_sort.rs"
+name = "bubble_sort"
+path = "/Users/harshaanbabra/Desktop/Code/Python/leetcode_soltuions/leet_code_solution_in_rust/simple_buble_sort/bubble_sort.rs"
 
 
 [dependencies]

@@ -1,12 +1,12 @@
 [package]
-name = "SimpleBinarySearch"
+name = "simple_binary_search"
 version = "0.1.0"
 authors = ["Harshaan Babra <harshaan.babra@gmail.com>"]
 edition = "2021"
 
 [[bin]]
-name = "SimpleBinarySearch"
-path = "/Users/harshaanbabra/Desktop/Code/Python/leetcode_soltuions/leet_code_solution_in_rust/simple_binary_search/SimpleBinarySearch.rs"
+name = "simple_binary_search"
+path = "/Users/harshaanbabra/Desktop/Code/Python/leetcode_soltuions/leet_code_solution_in_rust/simple_binary_search/simple_binary_search.rs"
 
 
 [dependencies]
