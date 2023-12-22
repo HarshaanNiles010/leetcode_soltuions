@@ -1,3 +1,4 @@
+use std::cmp::Ordering::{Equal, Greater, Less};
 fn main(){
     let length: i32 = 10;
     let target: i32 = 14;
@@ -36,3 +37,16 @@ fn sorted_two_pointers(nums: &mut Vec<i32>, target: i32) -> [i32;2]{
     return target_idx;
 }
 
+// Sorted two pointers but more rusty way
+
+fn new_sorted_two_pointers(nums: &mut Vec<i32>, target: i32) -> Vec<i32>{
+    let (mut l, mut r) = (0, nums.len() - 1);
+    while l < r{
+        match(nums[l] + nums[r]).cmp(&target){
+            Less => l += 1,
+            Greater => r -= 1,
+            Equal => return vec![l as i32 + 1, r as i32 + 1]
+        }
+    }
+    unreachable!("Test did not follow the constraints!")
+}
