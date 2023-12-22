@@ -6,6 +6,8 @@ fn main(){
     nums = populate_nums(&mut nums, length);
     let index_arr: [i32; 2] = sorted_two_pointers(&mut nums, target);
     println!("The target indexes are: {:?}",index_arr);
+    let new_index: Vec<i32> = new_sorted_two_pointers(&mut nums, target).to_vec();
+    println!("The target indexes are: {:?}", new_index);
 }
 
 fn populate_nums(nums: &mut Vec<i32>, length: i32) -> Vec<i32>{
