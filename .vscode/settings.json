@@ -1,0 +1,5 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./leet_code_solution_in_rust/sorted_two_pointer/Cargo.toml"
+    ]
+}
