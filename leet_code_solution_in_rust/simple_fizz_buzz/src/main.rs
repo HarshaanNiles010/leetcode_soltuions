@@ -11,4 +11,8 @@ fn main(){
             _ => println!("__")
         }
     }
+    /* let mut new_nums: Vec<T> = Vec::new();
+    for i in 0..10{
+        nums.push(i+ 1);
+    } */
 }
