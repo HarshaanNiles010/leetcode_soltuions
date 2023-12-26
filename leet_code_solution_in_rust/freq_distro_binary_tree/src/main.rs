@@ -6,9 +6,13 @@ fn main(){
     for i in 0..10{
         nums.push(i + 1);
     }
+    nums.push(10);
+    nums.push(9);
+    nums.push(8);
     let freq: BTreeMap<i32, i32> = freq_distro(&mut nums);
     println!("The freq distro is: ");
-    println!("{:?}", freq);
+    println!("{:#?}", freq);
+    
 }
 
 fn freq_distro(nums: &mut Vec<i32>) -> BTreeMap<i32, i32>{
