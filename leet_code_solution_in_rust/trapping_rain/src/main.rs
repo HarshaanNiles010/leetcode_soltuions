@@ -1,26 +1,31 @@
-use std::collections::BTreeMap;
-
-fn main() {
-    let mut nums: Vec<i32> = Vec::new();
-    for i in 0..10{
-        nums.push(i + 1);
-    }
-    let freq: BTreeMap<i32, i32> = freq_distro(&mut nums);
-    println!("{:#?}", freq);
-    for _ in 0..nums.len(){
-        println!("{:?}", freq.iter().next_back());
-    }
+fn main(){
+    let mut height: Vec<i32> = vec![0,1,0,2,1,0,1,3,2,1,2,1];
+    let max_area: i32 = trap(&mut height);
+    println!("max area is: {}", max_area);
 }
 
-fn freq_distro(nums: &mut Vec<i32>) -> BTreeMap<i32, i32>{
-    let mut temp: BTreeMap<i32, i32> = BTreeMap::new();
-    for i in 0..nums.len(){
-        if temp.contains_key(&nums[i]) {
-            *temp.get_mut(&nums[i]).unwrap() += 1;
+fn trap(height: &mut Vec<i32>) -> i32{
+    if height.is_empty(){
+        return 0;
+    }
+    let mut left: usize = 0;
+    let mut right: usize = height.len() - 1;
+    let mut max_left: i32 = height[left];
+    let mut max_right: i32 = height[right];
+    let mut result: i32 = 0;
+
+    while left < right{
+        if max_left < max_right{
+            left += 1;
+            max_left = max_left.max(height[left]);
+            result += max_left - height[left];
         }
         else{
-            temp.insert(nums[i], 1);
+            right -= 1;
+            max_right = max_right.max(height[right]);
+            result += max_right - height[right];
         }
     }
-    temp
+    result
 }
+
