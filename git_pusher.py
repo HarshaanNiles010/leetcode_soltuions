@@ -21,7 +21,7 @@ def git_puuuuuush(random_date,date_as_string):
     try:
         subprocess.run(['git','add','.'], cwd=repo_path, check=True)
         logging.info('git add success')
-        subprocess.run( [ 'GIT_AUTHOR_DATE=', 'GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE' ,'git','commit', '--date=' + random_date + ' 20:00:00','-m','working'], cwd=repo_path, check = True)
+        subprocess.run( [ 'git','commit', '--date=' + random_date + ' 20:00:00','-m','working'], cwd=repo_path, check = True)
         logging.info('git commit success')
         subprocess.run(['git','push'], cwd=repo_path, check=True)
         logging.info('git push success')
@@ -38,6 +38,5 @@ if __name__=='__main__':
     date_as_string = datetime.datetime.strptime(res,'%Y-%m-%d')
     date_time_format = '%a %b %H:%M:%S %Y %z'
     date_as_string = date_as_string.strftime(date_time_format)
-    #git_puuuuuush(res)
-    print(date_as_string)
+    git_puuuuuush(str(res),date_as_string)
     
