@@ -4,18 +4,18 @@ import datetime
 from random import randrange
 
 def generate_date():
-    start = datetime.date(2023,2,1)
+    start = datetime.date(2024,2,1)
     # initializing K 
     k = 365
     res = []
     for day in range(k):
         date = (start + datetime.timedelta(days = day)).isoformat()
-        res.append(str(date))
+        res.append(date)
     # printing result
     return res
 
 
-def git_puuuuuush(random_date):
+def git_puuuuuush(random_date,date_as_string):
     logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
     repo_path = '/Users/harshaanbabra/Desktop/Code/Python/leetcode_soltuions'
     try:
@@ -35,5 +35,9 @@ if __name__=='__main__':
     chosen_dates = [randrange(1,365) for i in range(1,365)]
     #print(chosen_dates)
     res = generate_date()[0]
-    git_puuuuuush(res)
+    date_as_string = datetime.datetime.strptime(res,'%Y-%m-%d')
+    date_time_format = '%a %b %H:%M:%S %Y %z'
+    date_as_string = date_as_string.strftime(date_time_format)
+    #git_puuuuuush(res)
+    print(date_as_string)
     
