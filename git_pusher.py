@@ -21,8 +21,6 @@ def git_puuuuuush(random_date,date_as_string):
     try:
         subprocess.run(['git','add','.'], cwd=repo_path, check=True)
         logging.info('git add success')
-        #subprocess.run(['GIT_AUTHOR_DATE=' + "\"" + date_as_string + "\"", 'GIT_COMITTER_DATE='+"\"" + date_as_string + "\"" + " "])
-        #logging.info('git date change success')
         subprocess.run( ['git','commit', '--date= ' + "\"" + date_as_string + "00:00:00" + "\"" ,'-m','working'], cwd=repo_path, check = True)
         logging.info('git commit success')
         subprocess.run(['git','push'], cwd=repo_path, check=True)
@@ -36,9 +34,10 @@ if __name__=='__main__':
     #git_puuuuuush()
     chosen_dates = [randrange(1,365) for i in range(1,365)]
     #print(chosen_dates)
-    res = generate_date()[0]
-    date_as_string = datetime.datetime.strptime(res,'%Y-%m-%d')
-    date_time_format = '%a %b %d %H:%M:%S %Y %z'
-    date_as_string = date_as_string.strftime(date_time_format)
-    git_puuuuuush(str(res),date_as_string)
+    for i in range(len(chosen_dates) - 1):
+        res = generate_date()[i]
+        date_as_string = datetime.datetime.strptime(res,'%Y-%m-%d')
+        date_time_format = '%a %b %d %H:%M:%S %Y %z'
+        date_as_string = date_as_string.strftime(date_time_format)
+        git_puuuuuush(str(res),date_as_string)
     
