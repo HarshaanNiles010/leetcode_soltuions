@@ -4,7 +4,7 @@ import datetime
 from random import randrange
 
 def generate_date():
-    start = datetime.date(2024,2,1)
+    start = datetime.date(2024,2,2)
     # initializing K 
     k = 365
     res = []
@@ -21,7 +21,9 @@ def git_puuuuuush(random_date,date_as_string):
     try:
         subprocess.run(['git','add','.'], cwd=repo_path, check=True)
         logging.info('git add success')
-        subprocess.run( [ 'git','commit', '--date=' + random_date + ' 20:00:00','-m','working'], cwd=repo_path, check = True)
+        #subprocess.run(['GIT_AUTHOR_DATE=' + "\"" + date_as_string + "\"", 'GIT_COMITTER_DATE='+"\"" + date_as_string + "\"" + " "])
+        #logging.info('git date change success')
+        subprocess.run( ['git','commit', '--date= ' + "\"" + date_as_string + "00:00:00" + "\"" ,'-m','working'], cwd=repo_path, check = True)
         logging.info('git commit success')
         subprocess.run(['git','push'], cwd=repo_path, check=True)
         logging.info('git push success')
@@ -36,7 +38,7 @@ if __name__=='__main__':
     #print(chosen_dates)
     res = generate_date()[0]
     date_as_string = datetime.datetime.strptime(res,'%Y-%m-%d')
-    date_time_format = '%a %b %H:%M:%S %Y %z'
+    date_time_format = '%a %b %d %H:%M:%S %Y %z'
     date_as_string = date_as_string.strftime(date_time_format)
     git_puuuuuush(str(res),date_as_string)
     
