@@ -11,47 +11,62 @@ fn main(){
     let sorted_vector = sort(&mut temp_vector.x);
     println!("The vector is: {:?}", sorted_vector);
     println!("The vector is: {:?}", temp_vector.x);
-    let sorted_list = is_sorted(&mut temp_vector.x.clone());
+    let mut sorted_list = is_sorted(&mut temp_vector.x.clone());
+    match sorted_list{
+        true => println!("The vector in struct is sorted"),
+        false => println!("The vector in struct is unsorted")
+    };
+    temp_vector.x = sorted_vector;
+    sorted_list = is_sorted(&mut temp_vector.x.clone());
     match sorted_list{
         true => println!("The vector is sorted"),
         false => println!("The vector is unsorted")
     };
 }
 
-fn sort<T: std::cmp::PartialOrd + Copy>(vector: &mut Vec<T>) -> (){
-    let middle = vector.len()/2;
+fn sort<T: std::cmp::PartialOrd + Copy>(vector: &mut Vec<T>) -> Vec<T>{
     if vector.len() < 2{
-        return;
+        vector.to_vec()
     }
-    let mut sorted = vector.to_vec();
-    sort(&mut vector[..middle].to_vec());
-    sort(&mut vector[middle..].to_vec());
-    merge(&mut vector[..middle].to_vec(), &mut vector[middle..].to_vec(), &mut sorted);
-    vector.copy_from_slice(&sorted);
+    else{
+        let size = vector.len() / 2;
+        let mut left = sort(&mut vector[0..size].to_vec());
+        let mut right = sort(&mut vector[size..].to_vec());
+        let merged = merge(&mut left, &mut right);
+        merged
+    }
 }
 
-fn merge<T: std::cmp::PartialOrd + Copy>(l_vector: &mut Vec<T>, r_vector: &mut Vec<T>, sorted: &mut Vec<T>) -> (){
-    let (mut left, mut right, mut i) = (0,0,0);
-    while left < l_vector.len() && right < r_vector.len(){
-        if l_vector[left] <= r_vector[right]{
-            sorted[i] = l_vector[left];
-            i += 1;
-            left += 1;
+fn merge<T: std::cmp::PartialOrd + Copy>(l_vector: &mut Vec<T>,r_vector: &mut Vec<T>) -> Vec<T>{
+    let mut i = 0;
+    let mut j = 0;
+    let mut merged = Vec::new();
+
+    while i < l_vector.len() && j < r_vector.len(){
+        if l_vector[i] < r_vector[j]{
+            merged.push(l_vector[i]);
+            i = i + 1;
         }
         else{
-            sorted[i] = r_vector[right];
-            i += 1;
-            right += 1;
+            merged.push(r_vector[j]);
+            j = j + 1;
         }
     }
 
-    if left < l_vector.len(){
-        sorted[i..].copy_from_slice(&l_vector[left..]);
+    if i < l_vector.len(){
+        while i < l_vector.len(){
+            merged.push(l_vector[i]);
+            i = i + 1;
+        }
     }
 
-    if right < r_vector.len(){
-        sorted[i..].copy_from_slice(&r_vector[right..]);
+    if j < r_vector.len(){
+        while j < r_vector.len(){
+            merged.push(r_vector[j]);
+            j = j + 1;
+        }
     }
+    merged 
 }
 
 
