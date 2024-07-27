@@ -4,7 +4,7 @@ import datetime
 from random import randrange
 
 def generate_date():
-    start = datetime.date(2023,1,1)
+    start = datetime.date(2023,2,1)
     # initializing K 
     k = 365
     res = []
@@ -21,7 +21,7 @@ def git_puuuuuush(random_date):
     try:
         subprocess.run(['git','add','.'], cwd=repo_path, check=True)
         logging.info('git add success')
-        subprocess.run(['git','commit', '--date=' + random_date + ' 20:00:00','-m','working'], cwd=repo_path, check = True)
+        subprocess.run( [ 'GIT_AUTHOR_DATE=', 'GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE' ,'git','commit', '--date=' + random_date + ' 20:00:00','-m','working'], cwd=repo_path, check = True)
         logging.info('git commit success')
         subprocess.run(['git','push'], cwd=repo_path, check=True)
         logging.info('git push success')
