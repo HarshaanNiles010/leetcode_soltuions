@@ -13,9 +13,12 @@ def calc_time(grid: List[List[int]]) -> int:
             # If the orange is rotten store the coordinates
             if grid[row][column] == 2:
                 q.append([row, column])
+            # If the orange is fresh increment the fresh counter
             if grid[row][column] == 1:
                 fresh += 1
+    # use a neighbour matrix to check for the oranges in the vicinity
     neighbours = [[0,1],[0,-1],[-1,0],[1,0]]
+    # run a multiple source BFS to check for time 
     while q and fresh > 0:
         for i in range(len(q)):
             i, j  = q.popleft()
@@ -26,10 +29,12 @@ def calc_time(grid: List[List[int]]) -> int:
                     c < 0 or c == len(grid[0]) or
                     grid[r][c] != 1):
                     continue
+                # Decrement the fresh oranges if orange is going to rot
                 grid[r][c] = 2
                 q.append([r,c])
                 fresh -= 1
         time += 1
+    # Return the time it took for oranges to rot otherwise return -1 indicating task is unsuccessful
     return time if fresh == 0 else -1
 
 
