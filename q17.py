@@ -24,10 +24,12 @@ def letter_combinations(digits: str):
     # fill the temporary list with charachter lists associated with a certain digit
     for digit in digits:
         t.append(digit_map[digit])
-    
+    # using itertools to easily find all the combinations that are required.
     t = list(itertools.product(*t))
     r = []
+    # Iterools returns a list of tuples which further needed to combined to produce the desired results
     for i in t:
+    # using the joing to append the results into a result List
         r.append("".join(i))
     return r
 
