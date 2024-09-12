@@ -4,6 +4,9 @@ import itertools
 
 
 def letter_combinations(digits: str):
+    if digits == "":
+        return []
+    
     digit_map = {
         "2": ["a", "b", "c"],
         "3": ["d", "e", "f"],
@@ -21,6 +24,7 @@ def letter_combinations(digits: str):
     # fill the temporary list with charachter lists associated with a certain digit
     for digit in digits:
         t.append(digit_map[digit])
+    
     t = list(itertools.product(*t))
     r = []
     for i in t:
