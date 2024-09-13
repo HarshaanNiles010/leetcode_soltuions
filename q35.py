@@ -1,6 +1,7 @@
 from typing import List
 
-
+# Simply perform a binary search algorithm on this and then return the index of the left pointer
+# It was an easy problem, so didn't take that long unfortunately
 def searchInsert(nums: List[int], target: int):
     l = 0
     r = len(nums) - 1
