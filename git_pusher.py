@@ -2,6 +2,7 @@ import subprocess
 import logging
 import datetime
 from random import randrange
+import file_maker
 
 def generate_date():
     start = datetime.date(2024,2,2)
@@ -35,6 +36,7 @@ if __name__=='__main__':
     chosen_dates = [randrange(1,365) for i in range(1,365)]
     #print(chosen_dates)
     for i in range(len(chosen_dates) - 1):
+        file_maker.chaos()
         res = generate_date()[i]
         date_as_string = datetime.datetime.strptime(res,'%Y-%m-%d')
         date_time_format = '%a %b %d %H:%M:%S %Y %z'
