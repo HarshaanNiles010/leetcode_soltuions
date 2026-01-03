@@ -5,13 +5,13 @@ def lcsLength(text1: str, text2: str) -> int:
     for i in range(len(text1) + 1 ):
         for j in range(len(text2) + 1 ):
             if i == 0 or j == 0:
-                L[i][j] = 0
+                L[i][j] = 0 # type: ignore
             elif text1[i - 1] == text2[j - 1]:
-                L[i][j] = L[i - 1][j - 1] + 1
+                L[i][j] = L[i - 1][j - 1] + 1 # type: ignore
             else:
-                L[i][j] = max(L[i - 1][j], L[i][j - 1])
+                L[i][j] = max(L[i - 1][j], L[i][j - 1]) # type: ignore
     length = L[len(text1)][len(text2)]
-    return length
+    return length # type: ignore
 
 if __name__ == '__main__':
     

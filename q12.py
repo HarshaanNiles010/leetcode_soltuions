@@ -18,9 +18,9 @@ def intToRoman(n:int) -> str:
         
     for n in [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]:
         # If n in list then add the roman value to result variable
-        while n <= num:
+        while n <= num: # type: ignore
             r += num_map[n]
-            num-=n
+            num-=n # type: ignore
     return r
 
 

@@ -18,20 +18,20 @@ def calc_time(grid: List[List[int]]) -> int:
                 fresh += 1
     # use a neighbour matrix to check for the oranges in the vicinity
     neighbours = [[0,1],[0,-1],[-1,0],[1,0]]
-    # run a multiple source BFS to check for time 
+    # run a multiple source BFS to check for time
     while q and fresh > 0:
-        for i in range(len(q)):
-            i, j  = q.popleft()
+        for _ in range(len(q)):
+            i, j = q.popleft()
             for coord_x, coord_y in neighbours:
-                r = coord_x + i
-                c = coord_y + j
-                if (r < 0 or r == len(grid) or 
-                    c < 0 or c == len(grid[0]) or
+                r = i + coord_x
+                c = j + coord_y
+                if (r < 0 or r >= rows or
+                    c < 0 or c >= columns or
                     grid[r][c] != 1):
                     continue
                 # Decrement the fresh oranges if orange is going to rot
                 grid[r][c] = 2
-                q.append([r,c])
+                q.append([r, c])
                 fresh -= 1
         time += 1
     # Return the time it took for oranges to rot otherwise return -1 indicating task is unsuccessful
