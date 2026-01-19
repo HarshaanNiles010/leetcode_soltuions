@@ -8,3 +8,7 @@ def minTotal(triangle: List[List[int]]) -> int:
         for col in range(len(triangle[row])):
             dp[row][col] = triangle[row][col] + min(dp[row + 1][col], dp[row + 1][col + 1])
     return dp[0][0]
+
+if __name__ == '__main__':
+    triangle = [[1],[2],[3],[4]]
+    print(minTotal(triangle))
